@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(
     cors({
-        origin: "https://feedback-form-3sp6ny5mo-nithin6524-gmailcoms-projects.vercel.app", // Your Vercel frontend URL
+        origin: "https://feedback-form-qtzcrlsvo-nithin6524-gmailcoms-projects.vercel.app", // Your Vercel frontend URL
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
