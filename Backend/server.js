@@ -1,9 +1,9 @@
-import express from 'express';
-import cors from 'cors';
-import morgan from 'morgan';
-import dotenv from 'dotenv';
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+import dotenv from "dotenv";
 
-import { connectDB } from './config/database.js';
+import { connectDB } from "./config/database.js";
 import feedbackRoutes from "./routes/feedbackRoutes.js";
 
 // Load environment variables
@@ -14,25 +14,29 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors());
+app.use(
+    cors({
+        origin: "https://feedback-form-3sp6ny5mo-nithin6524-gmailcoms-projects.vercel.app", // Your Vercel frontend URL
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 // Connect to MongoDB
 connectDB();
 
 // Routes
-app.use('/api/feedback',feedbackRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 // Root route
-app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to Express MongoDB API' });
+app.get("/", (req, res) => {
+    res.json({ message: "Welcome to Express MongoDB API" });
 });
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
-
-
