@@ -1,0 +1,22 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.home-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-unit;
+
+
+    .made-by {
+        text-align: center;
+        margin-top: 4rem;
+        font-size: 0.9rem;
+        color: #b3c2be;
+        font-style: italic;
+
+        strong {
+            color: #ffffff;
+        }
+    }
+
+}
