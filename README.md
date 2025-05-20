@@ -111,6 +111,4 @@ feedback-form/
 * Backend: Express.js, MongoDB, Mongoose
 * Tooling: Axios, dotenv, concurrently
 
----
 
-Let me know if you'd like deployment instructions or contributor guidelines added next!
