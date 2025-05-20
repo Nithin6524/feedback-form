@@ -108,7 +108,6 @@ feedback-form/
 ## 🧩 Tech Stack
 
 * Frontend: React, SCSS (Sass)
-* Backend: Express.js, MongoDB, Mongoose
-* Tooling: Axios, dotenv, concurrently
+* Backend: Express.js, MongoDB, Node.js
 
 
