@@ -34,7 +34,7 @@ app.use("/api/feedback", feedbackRoutes);
 // Root route
 app.get("/", (req, res) => {
     res.json({ message: "Welcome " });
-});E
+});
 
 // Start server
 app.listen(PORT, () => {
