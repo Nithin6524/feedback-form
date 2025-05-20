@@ -111,3 +111,12 @@ feedback-form/
 * Backend: Express.js, MongoDB, Node.js
 
 
+## Frontend Deployment
+
+- On vercel: https://feedback-form-qtzcrlsvo-nithin6524-gmailcoms-projects.vercel.app/
+
+
+## Backend Deployment
+
+- On Railway: https://feedback-form-production-b57c.up.railway.app/
+
