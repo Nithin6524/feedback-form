@@ -13,14 +13,27 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
+const allowedOrigins = [
+    "https://feedback-form-navy.vercel.app",
+    "http://localhost:3000", // optional for local dev
+    "https://feedback-form-qtzcrlsvo-nithin6524-gmailcoms-projects.vercel.app",
+];
+
 app.use(
     cors({
-        origin: "https://feedback-form-navy.vercel.app", // Your Vercel frontend URL
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
+        origin: function (origin, callback) {
+            // allow requests with no origin (like mobile apps, curl, etc.)
+            if (!origin) return callback(null, true);
+            if (allowedOrigins.includes(origin)) {
+                return callback(null, true);
+            } else {
+                return callback(new Error("Not allowed by CORS"));
+            }
+        },
+        credentials: true, // if you're sending cookies or authorization headers
     })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
